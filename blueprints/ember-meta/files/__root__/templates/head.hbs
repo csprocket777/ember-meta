@@ -50,19 +50,18 @@
   <meta property="og:type" content={{model.type}}>
 {{/if}}
 
-{{#if model.imgSrc}}
-  <meta property="og:image" content={{model.imgSrc}}>
-  <meta property="og:image:type" content="image/png">
-  <meta property="og:image:width" content="256">
-  <meta property="og:image:height" content="256">
-{{/if}}
-
-
 {{#if model.imgSrcSecure}}
   <meta property="og:image:secure_url" content={{model.imgSrcSecure}}>
   <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="256">
   <meta property="og:image:height" content="256">
+{{else}}
+  {{#if model.imgSrc}}
+    <meta property="og:image" content={{model.imgSrc}}>
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="256">
+    <meta property="og:image:height" content="256">
+  {{/if}}
 {{/if}}
 {{!-- End opengraph --}}
 
