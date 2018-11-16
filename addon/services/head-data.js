@@ -73,7 +73,7 @@ export default Service.extend({
    * Used for og:image twitter:image:src, the image to display in your unfurled links
    */
   imgSrc: computed('routeName', function() {
-    return this.getWithDefault('currentRouteModel.imgSrc', emberMetaConfig.imgSrc);
+    return emberMetaConfig.imgSrcSecure ? this.getWithDefault('currentRouteModel.imgSrcSecure', emberMetaConfig.imgSrcSecure) :this.getWithDefault('currentRouteModel.imgSrc', emberMetaConfig.imgSrc);
   }),
   /**
    * Used for twitter meta to display 'filed under'
